@@ -2,7 +2,7 @@
 This project provides the code and results for 'LSNet: Lightweight Spatial Boosting Network for Detecting Salient Objects in RGB-Thermal Images', IEEE TIP, 2023. [IEEE link](https://ieeexplore.ieee.org/document/10042233)  <br>
 
 # Requirements
-Python 3.7+, Pytorch 1.5.0+, Cuda 10.2+, TensorboardX 2.1, opencv-python <br>
+Python 3.8+, Pytorch 2.3.1+, Cuda 11.8+, opencv-python <br>
 If anything goes wrong with the environment, please check requirements.txt for details.
 
 # Architecture and Details

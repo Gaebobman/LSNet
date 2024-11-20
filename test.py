@@ -6,7 +6,8 @@ import numpy as np
 import os
 import cv2
 
-from LSNet import LENetmobilenetv2_KD
+# from LSNet import LENetmobilenetv2_KD
+from LSNet import LSNet
 from config import opt
 
 
@@ -21,7 +22,7 @@ print('USE GPU:', opt.gpu_id)
 model = LSNet()
 
 #Large epoch size may not generalize well. You can choose a good model to load according to the log file and pth files saved in ('./BBSNet_cpts/') when training.
-model.load_state_dict(torch.load(''))
+model.load_state_dict(torch.load('/home/0_code/LSNet_Android/LSNet/results/resultsNet_epoch_best.pth'))
 model.cuda()
 model.eval()
 
@@ -30,7 +31,7 @@ model.eval()
 test_mae = []
 if opt.task =='RGBT':
     from rgbt_dataset import test_dataset
-    test_datasets = ['VT800','VT1000','VT5000']
+    test_datasets = ['VT821','VT1000','VT5000']
 elif opt.task == 'RGBD':
     from rgbd_dataset import test_dataset
     test_datasets = ['NJU2K', 'DES', 'LFSD', 'NLPR', 'SIP']
@@ -39,7 +40,7 @@ else:
 
 for dataset in test_datasets:
     mae_sum  = 0
-    save_path = '/' + dataset + '/'
+    save_path = './test_results/' + dataset + '/'
     if not os.path.exists(save_path):
         os.makedirs(save_path)
     if opt.task == 'RGBT':
