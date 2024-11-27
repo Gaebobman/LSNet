@@ -462,5 +462,6 @@ fabric.properties
 
 test_results/
 *.pth
+results/resultssummary/
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,androidstudio,android,python,kotlin,java
